@@ -20,6 +20,7 @@ matrix:
 
 
 script:
+  - export DOCKER_CLI_EXPERIMENTAL=enabled
   - docker pull quay.io/montana/ppc64le
 
 deploy:
