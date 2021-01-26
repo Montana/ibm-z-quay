@@ -1,13 +1,17 @@
-language: generic
+language: shell
+dist: xenial
+sudo: required
+os: linux
 
 services:
   - docker
   
-  addons:
+  
+addons:
   apt:
     packages:
       - docker-ce
-
+      
 matrix:
   include:
     - env: CONFIG=linux_ppc64le_ UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=quay.io/montana/ppc64le
