@@ -6,9 +6,13 @@ matrix:
       os: linux
       arch: ppc64le
 
-
 services:
   - docker
+  
+  addons:
+  apt:
+    packages:
+      - docker-ce
 
 script:
   - docker pull quay.io/montana/ppc64le
