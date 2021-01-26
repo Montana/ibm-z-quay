@@ -1,7 +1,5 @@
 language: generic
 
-sudo: required
-
 arch: ppc64le
 
 services:
@@ -13,7 +11,7 @@ script:
 deploy:
   provider: script
   script: 
-  - bash build.sh
+  - chmod u+x build.sh
   
   on:
     branch: master
