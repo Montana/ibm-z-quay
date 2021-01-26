@@ -1,0 +1,17 @@
+language: generic
+
+arch: ppc64le
+
+services:
+  - docker
+
+script:
+  - docker pull quay.io/montana/ppc64le
+
+deploy:
+  provider: script
+  script: 
+  - bash build.sh
+  
+  on:
+    branch: master
