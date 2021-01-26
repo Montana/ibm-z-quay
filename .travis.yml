@@ -1,7 +1,5 @@
 language: generic
 
-arch: s390x 
-
 services:
   - docker
 
@@ -11,8 +9,8 @@ script:
 deploy:
   provider: script
   script: 
-  - chmod u+x build.sh
+  - bash build.sh
   
   on:
     branch: master
-# trigger
+
