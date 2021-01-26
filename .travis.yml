@@ -1,5 +1,7 @@
 language: generic
 
+arch: ppc64le 
+
 services:
   - docker
 
@@ -11,8 +13,6 @@ deploy:
   provider: script
   script: 
   - bash build.sh
-  arch:
-  - ppc64le
   
   on:
     branch: master
