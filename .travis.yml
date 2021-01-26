@@ -7,6 +7,13 @@ arch: ppc64le
 services:
   - docker
   
+register: override_template
+
+- name: Reload systemd daemon if template is changed.
+  systemd:
+    daemon_reload: true
+  when: override_template is changed
+  
 
 script:
   - export DOCKER_CLI_EXPERIMENTAL=enabled
