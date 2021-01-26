@@ -2,22 +2,11 @@ language: shell
 dist: xenial
 sudo: required
 os: linux
+arch: ppc64le
 
 services:
   - docker
   
-  
-addons:
-  apt:
-    packages:
-      - docker-ce
-      
-matrix:
-  include:
-    - env: CONFIG=linux_ppc64le_ UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=quay.io/montana/ppc64le
-      os: linux
-      arch: ppc64le
-
 
 script:
   - export DOCKER_CLI_EXPERIMENTAL=enabled
