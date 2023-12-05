@@ -1,5 +1,6 @@
 os: linux
 language: shell
+arch: s390x 
 
 services:
   - docker
@@ -8,6 +9,7 @@ script:
   - export DOCKER_CLI_EXPERIMENTAL=enabled
   - docker pull quay.io/montana/s390x2
   - docker manifest inspect quay.io/montana/s390x2
+  - uname -r 
   
 deploy:
   provider: script
