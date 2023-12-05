@@ -7,7 +7,7 @@ services:
 script:
   - export DOCKER_CLI_EXPERIMENTAL=enabled
   - docker pull quay.io/montana/s390x2
-  - docker manifest create quay.io/montana/s390x2
+  - docker manifest quay.io/montana/s390x2
   
 deploy:
   provider: script
