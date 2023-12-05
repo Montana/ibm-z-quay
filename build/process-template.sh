@@ -1,4 +1,5 @@
 #!/bin/bash
+#text-base
 
 set -e
 
