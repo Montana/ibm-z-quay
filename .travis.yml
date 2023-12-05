@@ -8,7 +8,7 @@ services:
   
 script:
   - export DOCKER_CLI_EXPERIMENTAL=enabled
-  - docker pull quay.io/montana/s390x
+  - docker pull quay.io/montana/montana-s390x
 
 deploy:
   provider: script
@@ -17,5 +17,3 @@ deploy:
   
   on:
     branch: master
-
-#try
