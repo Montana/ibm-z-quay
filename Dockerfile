@@ -1,2 +1,2 @@
-FROM ppc64le/nginx
-COPY static-html-directory /usr/share/nginx/html
+FROM s390x/ubuntu:latest
+CMD echo "Hello World from a container running on $(uname -m)"
