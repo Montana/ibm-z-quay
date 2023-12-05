@@ -10,6 +10,7 @@ script:
   - docker pull quay.io/montana/s390x2
   - docker manifest inspect quay.io/montana/s390x2
   - uname -r 
+  - nproc
   
 deploy:
   provider: script
