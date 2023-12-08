@@ -9,6 +9,9 @@ jobs:
    - stage: building ppc64le image
      arch: ppc64le
      script: chmod +x ./build.sh; ./build.sh
+  - stage: building s390x image
+     arch: s390x
+     script: chmod +x ./build.sh; ./build.sh
    - stage: building x86_64 image
      arch: amd64
      script: chmod +x ./build.sh; ./build.sh
@@ -20,4 +23,7 @@ jobs:
      script: docker pull quay.io/montana/multi-arch:multi-arch-latest; docker run --rm quay.io/montana/multi-arch:multi-arch-latest
    - stage: run ppc64le image
      arch: ppc64le
+     script: docker pull quay.io/montana/multi-arch:multi-arch-latest; docker run --rm quay.io/montana/multi-arch:multi-arch-latest
+   - stage: run s390x image
+     arch: s390x
      script: docker pull quay.io/montana/multi-arch:multi-arch-latest; docker run --rm quay.io/montana/multi-arch:multi-arch-latest
