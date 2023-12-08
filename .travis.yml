@@ -1,21 +1,23 @@
+language: bash
 os: linux
-language: shell
-arch: s390x 
+services: docker
+sudo: required
+dist: bionic
 
-services:
-  - docker
-  
-script:
-  - export DOCKER_CLI_EXPERIMENTAL=enabled
-  - docker pull quay.io/montana/s390x2
-  - docker manifest inspect quay.io/montana/s390x2
-  - uname -r 
-  - nproc
-  
-deploy:
-  provider: script
-  script: 
-  - bash build.sh
-  
-  on:
-    branch: master
+jobs:
+  include:
+   - stage: building ppc64le image
+     arch: ppc64le
+     script: chmod +x ./build.sh; ./build.sh
+   - stage: building x86_64 image
+     arch: amd64
+     script: chmod +x ./build.sh; ./build.sh
+   - stage: building multi-arch image
+     arch: ppc64le
+     script: chmod +x ./create-multi-arch.sh; ./create-multi-arch.sh
+   - stage: run x86_64 image
+     arch: amd64
+     script: docker pull quay.io/montana/multi-arch:multi-arch-latest; docker run --rm quay.io/montana/multi-arch:multi-arch-latest
+   - stage: run ppc64le image
+     arch: ppc64le
+     script: docker pull quay.io/montana/multi-arch:multi-arch-latest; docker run --rm quay.io/montana/multi-arch:multi-arch-latest
