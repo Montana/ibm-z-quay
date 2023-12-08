@@ -1,8 +1,7 @@
-language: bash
-os: linux
+---
+dist: focal
+language: shell
 services: docker
-sudo: required
-dist: bionic
 
 jobs:
   include:
