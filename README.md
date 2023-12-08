@@ -1,2 +1,3 @@
 # IBM Z Webinar (Quay.io/Travis CI)
-Pushing and pulling images to and from Quay using robot accounts from quay.io Specifically `s390x`.
+Utilizing Travis CI to push to Red Hat's Quay.io to pushup a  multi-SHA image manifest of architectures that mainly leverage IBM's `s390x` and `ppc64le`. 
+
