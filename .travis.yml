@@ -1,7 +1,5 @@
 ---
 dist: jammy
-vm:
-  size: 2x-large
 language: shell
 services: docker
 
