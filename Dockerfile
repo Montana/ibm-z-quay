@@ -24,4 +24,4 @@ RUN \
     && rm -rf /var/lib/apt/lists/*
 
   
-CMD echo "Hello World from a container running on $(uname -m)"
+CMD echo "Hello World from a Quay container running on $(uname -m)"
