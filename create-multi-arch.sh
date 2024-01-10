@@ -3,7 +3,7 @@
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
 docker manifest create quay.io/montana/multi-arch:multi-arch-latest \
-quay.io/montana/multi-arch:multi-arch-travis-x86_64 quay.io/montana/multi-arch:multi-arch-travis-ppc64le quay.io/montana/multi-arch:multi-arch-travis-s390x
+quay.io/montana/multi-arch:multi-arch-travis-x86_64 quay.io/montana/multi-arch:multi-arch-travis-ppc64le
 
 docker manifest inspect quay.io/montana/multi-arch:multi-arch-latest
 
